@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "escape-html": "^1.0.3",
     "firebase": "^9.3.0"
   },
   "devDependencies": {},
-  "scripts": {
-   
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SiyanaKDimitrova/reactExam.git"

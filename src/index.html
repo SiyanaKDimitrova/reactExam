@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://www.gstatic.com/firebasejs/9.3.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.3.0/firebase-auth-compat.js"></script>
+    <!-- <script type="module" src="https://www.gstatic.com/firebasejs/9.3.0/firebase-realtime-compat.js"></script> -->
+    <script  src="https://www.gstatic.com/firebasejs/9.3.0/firebase-auth-compat.js"></script>
 </head>
+
 <body>
-    <script>
-      
-import { initializeApp } from "firebase/app";
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-app.js";
+        //import { getDatabase } from "./firebase/database";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyBpTAQdYGOGpBXEjmN7Qs5wjL3ZuLnvMxE",
-  authDomain: "react-web-b9916.firebaseapp.com",
-  projectId: "react-web-b9916",
-  storageBucket: "react-web-b9916.appspot.com",
-  messagingSenderId: "757202530523",
-  appId: "1:757202530523:web:2c043e02aa00aa2b7bdcfe"
-};
+        const firebaseConfig = {
+            apiKey: "AIzaSyBpTAQdYGOGpBXEjmN7Qs5wjL3ZuLnvMxE",
+            authDomain: "react-web-b9916.firebaseapp.com",
+            projectId: "react-web-b9916",
+            storageBucket: "react-web-b9916.appspot.com",
+            messagingSenderId: "757202530523",
+            appId: "1:757202530523:web:2c043e02aa00aa2b7bdcfe"
+        };
 
-const app = initializeApp(firebaseConfig);
+        const app = initializeApp(firebaseConfig);
+        //const db = getDatabase(app);
+        const auth = firebase.auth();
+        auth.signInWithEmailAndPassword('asdasd@abv.bg', 'asdasd')
+        .then(res => {
+            console.log('login');
+        }).catch(err => {
+            console.log('error sisi');
+        })
     </script>
 </body>
+
 </html>
