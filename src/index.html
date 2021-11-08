@@ -5,13 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://firebase.google.com/docs/web/setup#available-libraries"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script type="module" src="./index.js"></script>
     <title>Document</title>
 </head>
 
 <body>
     <script>
+        // Import the functions you need from the SDKs you need
         import { initializeApp } from "firebase/app";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
 
+        // Your web app's Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyBq2hN6I-sRT-JD1kPEoPqw_kbJbAmXwZg",
             authDomain: "react-web-app-d02b5.firebaseapp.com",
@@ -21,8 +30,8 @@
             appId: "1:75057942162:web:ee6535a721861fa083e04b"
         };
 
-        const app = initializeApp(firebaseConfig);
-    </script>
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);</script>
 </body>
 
 </html>

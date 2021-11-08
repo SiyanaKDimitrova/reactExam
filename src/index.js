@@ -1,32 +1,16 @@
-import { render } from './node_modules/lit-html/lit-html.js';
-import page from './node_modules/page/page.mjs';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 
-import { homePage } from './views/home.js'
-let main = document.getElementById('main');
-userNavigation()
+const firebaseConfig = {
+    apiKey: "API_KEY",
+    authDomain: "PROJECT_ID.firebaseapp.com",
+    databaseURL: "https://PROJECT_ID.firebaseio.com",
+    projectId: "PROJECT_ID",
+    storageBucket: "PROJECT_ID.appspot.com",
+    messagingSenderId: "SENDER_ID",
+    appId: "APP_ID",
+    measurementId: "G-MEASUREMENT_ID",
+  };
 
-page('/', context, homePage)
-
-page.start();
-
-function context(ctx, next) {
-    ctx.render = (content) => render(content, main);
-    ctx.userNavigation = userNavigation
-
-    next();
-}
-
-//http-server -a localhost -p 3000 -P http://localhost:3000?
-
-
- function userNavigation (){
-    const token = sessionStorage.getItem('authToken');
-
-    if(token != null){
-        document.querySelector('.user').style.display = '';
-        document.querySelector('.guest').style.display = 'none';
-    }else{
-        document.querySelector('.user').style.display = 'none';
-        document.querySelector('.guest').style.display = '';
-    }
-}
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
