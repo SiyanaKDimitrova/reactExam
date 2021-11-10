@@ -8,6 +8,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var e = React.createElement;
+
 var LikeButton = function (_React$Component) {
   _inherits(LikeButton, _React$Component);
 
@@ -29,18 +31,11 @@ var LikeButton = function (_React$Component) {
         return 'You liked this.';
       }
 
-      return React.createElement(
-        'button',
-        { onClick: function onClick() {
-            return _this2.setState({ liked: true });
-          } },
-        'Like'
-      );
+      return e('button', { onClick: function onClick() {
+          return _this2.setState({ liked: true });
+        } }, 'Like');
     }
   }]);
 
   return LikeButton;
 }(React.Component);
-
-var domContainer = document.querySelector('#like_button_container');
-ReactDOM.render(React.createElement(LikeButton, null), domContainer);
